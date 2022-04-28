@@ -1,0 +1,40 @@
+
+
+Binario a Decimal
+
+Tomo el número( de izq. a der) y lo multiplico por 2 elevado a la posición.
+Primero elevo el número a la potencia y después multiplico por el binario.
+
+    1 1 0 =   1 x 2 ^ 2   +  1 x 2 ^ 1  +  0 x 2 ^ 0
+pos 2 1 0       1 x 4     +    1 x 2    +   0 x 1
+                  4       +      2      +     0
+                  6 
+
+
+Decimal a Binario 
+          
+           E  R
+
+7 = 7 / 2  3  1        3   3   --> 1 es el resto/residuo
+    3 / 2  1  1        1   1   --> 1
+    1 ------> 1
+
+
+binario --> 1 1 1 
+Formo el número binario con los residuos de abajo hacia arriba
+
+            E  R
+8 = 8 / 2   4  0
+    4 / 2   2  0
+    2 / 2   1  0
+    1 -------> 1
+
+    binario = 1000
+
+
+
+git init --> inicializa un repo local vacio
+git add . --> agrega archivos a git 
+git commit -m 'mensaje' --> confirmar los archivos/cambios agregados
+git remote add origin 'link del repo remoto'(lo sacan de github) --> vincular repo remoto con local
+git push -u etc. --> subir los cambios a github 
