@@ -1,0 +1,58 @@
+
+
+Cómo funciona el intérprete???
+
+Run script
+
+syntax parser --> verifica que no haya errores de sintaxis
+
+Fase 1: FASE DE CREACIÓN 
+
+- crea el contexto global --> ventana del navegador / consola / el lugar donde corre mi código
+- asigna la variable this --> objeto window 
+- crea las referencias al outer Environment
+- hoisting: resrevar un espacio en memoria para las decalaraciones de variables y funciones.
+
+
+
+Fase 2: FASE DE EJECUCIÓN
+
+- el intérprete ejecuta el código linea por linea 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- memoria --
+function bar() {
+	console.log('Soy una función');
+}
+var foo;
+
+--------------------------------
+
+bar();  --> console.log('Soy una función');
+console.log(foo); --> undefined
+
+var foo = 'Hola, me declaro';
+
+console.log(foo);
+
+function bar() {
+	console.log('Soy una función');
+}
+
+
