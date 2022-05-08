@@ -84,12 +84,12 @@ class Shape {
 }
 
 class Circle extends Shape {
-  constructor(d) {
+  constructor(r) {
     super("Circle");
-    this.d = d;
+    this.r = r;
   }
   getPerimeter() {
-    return this.d * 2 * Math.PI;
+    return this.r * 2 * Math.PI;
   }
 }
 
