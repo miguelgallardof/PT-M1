@@ -122,18 +122,25 @@ class Square extends Shape {
     super("Square");
     this.l = l;
   }
+
+  getPerimeter() {
+    return this.l * 4;
+  }
+
   getArea() {
     return this.l * this.l;
   }
 }
 
-var s = new Square(4);
+var s = new Square(12);
 s instanceof Square;
 // true
 Shape.prototype.isPrototypeOf(s);
 // true
+s.getPerimeter();
+// 48
 s.getArea();
-// 16
+// 144
 s.getType();
 // "Square"
 ```
