@@ -8,6 +8,15 @@ describe('Integer numbers', () => {
   it('should return 15 if adding 7 and 8', () => {
     expect(sum(7, 8)).toBe(15);
   });
+  /* describe('Integer numbers negatives', () => {
+      it('should return -8 if adding -3 and 5', () => {
+        expect(sum(-3, 5)).toBe(-8);
+      });
+      
+      it('should return 15 if adding -7 and -8', () => {
+        expect(sum(-7, -8)).toBe(15);
+      });
+    }); */
 });
 
 describe('Decimal numbers', () => {
