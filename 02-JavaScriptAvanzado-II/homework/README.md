@@ -118,12 +118,12 @@ class Shape {
 }
 
 class Square extends Shape {
-  constructor(x) {
+  constructor(l) {
     super("Square");
-    this.x = x;
+    this.l = l;
   }
   getArea() {
-    return this.x * this.x;
+    return this.l * this.l;
   }
 }
 
