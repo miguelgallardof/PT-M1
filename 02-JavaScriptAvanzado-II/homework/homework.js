@@ -25,6 +25,15 @@ function cacheFunction(cb) {
   // si la invocas de nuevo con 5, deberia retornar 25 (guardado previament en el cache)
   // Tips, usá un objeto donde cada propiedad sea un argumento, y el valor el resultado.
   // usá hasOwnProperty!
+  var cache = {};
+  return function (x) {
+    if (cache.hasOwnProperty(x) === true) {
+      return cache[x];
+    }
+    var resultado = cb(x);
+    cache[x] = resultado;
+    return resultado;
+  };
 
   /*let cache = {};
   return function (arg) {
@@ -35,23 +44,6 @@ function cacheFunction(cb) {
       return cache[arg];
     }
   };*/
-
-  var cache = {};
-
-  return function (x) {
-    if (cache.hasOwnProperty(x) === true) {
-      return cache[x];
-    }
-    var resultado = cb(x);
-    cache[x] = resultado;
-    return resultado;
-  };
-
-  /*let cache = {}
-  return function(arg) {
-    cache[arg] = (cache.hasOwnProperty(arg)) ? cache[arg] : cb(arg);
-    return cache[arg];
-  }*/
 }
 
 // Bind
