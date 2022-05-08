@@ -42,8 +42,7 @@ function checkSeatStatus(row, number) {
     throw new TypeError("First parameter is not a string");
   if (typeof number !== "number")
     throw new TypeError("Second parameter is not a number");
-  if (row.length !== 1 && row.length >= 1)
-    throw new TypeError("This parameter is not a letter");
+  if (row.length > 2) throw new TypeError("This parameter is not a letter");
   if (row === "") throw new TypeError("This parameter is an empty string");
   if (number > 3) throw new TypeError("This parameter is greater than 4");
   /* const numberRow = getRowNumber(row);
@@ -70,8 +69,41 @@ function book(row, number) {
   return "Seat in " + row + number + " successfully booked";
 }
 
+function totalSeats() {
+  let total = 0;
+  for (let i = 0; i < layout.length; i++) {
+    total += layout[i].length;
+  }
+  //console.log(total);
+  return total;
+}
+
+function totalBooked(row, number) {
+  let seat = getSeat(row, number);
+  if (seat.book == true) {
+    let cont1 = 0;
+    for (let i = 0; i < layout.length; i++) {
+      cont1 += layout[i].length;
+    }
+    console.log(cont1);
+    return cont1;
+  }
+}
+
+/* function totalNoBooked() {
+  if ((seat.booked = false)) {
+    let total = 0;
+    for (let i = 0; i < layout.length; i++) {
+      total += layout[i].length;
+    }
+    return total;
+  } 
+}*/
+
 module.exports = {
   checkSeatStatus,
   getRowNumber,
   book,
+  totalSeats,
+  totalBooked,
 };

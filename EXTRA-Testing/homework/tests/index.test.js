@@ -1,7 +1,13 @@
 /*it("Always true", () => {
   expect(true).toBe(true);
 });*/
-const { checkSeatStatus, getRowNumber, book } = require("../homework");
+const {
+  checkSeatStatus,
+  getRowNumber,
+  book,
+  totalSeats,
+  totalBooked,
+} = require("../homework");
 
 describe("checkSeatStatus", () => {
   it("checkSeatStatus is a function", () => {
@@ -27,7 +33,7 @@ describe("checkSeatStatus", () => {
     expect(checkSeatStatus("E", 3)).toBe(false);
   });
 
-  it("should throw a TypeError if the parameter is a word", () => {
+  it("should throw a TypeError if the parameter is not a letter", () => {
     expect(() => checkSeatStatus("Hola", 1)).toThrow(
       new TypeError("This parameter is not a letter")
     );
@@ -70,5 +76,11 @@ describe("book", () => {
     expect(book("E", 3)).toBe("Seat in E3 successfully booked");
     expect(checkSeatStatus("E", 3)).toBe(true);
     expect(book("E", 3)).toBe("Seat in E3 is already booked");
+  });
+  it('should return "total number of seats"', () => {
+    expect(totalSeats()).toBe(20);
+  });
+  it('should return "total number of seats booked"', () => {
+    expect(totalBooked(true)).toBe(9);
   });
 });
