@@ -96,16 +96,14 @@ function income(arg) {
     for (let j = 0; j <= layout[j].length - 1; j++) {
       if (layout[i][j].type === arg) {
         cont += 1;
+        var total = 0;
         if (arg === "ECONOMIC") {
-          var total;
           total = cont * 300;
         }
         if (arg === "NORMAL") {
-          var total;
           total = cont * 450;
         }
         if (arg === "VIP") {
-          var total;
           total = cont * 600;
         }
       }
