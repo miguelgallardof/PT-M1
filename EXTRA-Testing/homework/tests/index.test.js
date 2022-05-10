@@ -7,6 +7,7 @@ const {
   book,
   totalSeats,
   totalBooked,
+  income,
 } = require("../homework");
 
 describe("checkSeatStatus", () => {
@@ -25,6 +26,7 @@ describe("checkSeatStatus", () => {
       new TypeError("Second parameter is not a number")
     );
   });
+
   it("should return true if the seat is booked", () => {
     expect(checkSeatStatus("A", 1)).toBe(true);
   });
@@ -45,9 +47,9 @@ describe("checkSeatStatus", () => {
     );
   });
 
-  it("should throw a TypeError if the parameter is greater than 4", () => {
+  it("should throw a TypeError if the parameter is greater than 3", () => {
     expect(() => checkSeatStatus("A", 4)).toThrow(
-      new TypeError("This parameter is greater than 4")
+      new TypeError("This parameter is greater than 3")
     );
   });
 });
@@ -77,10 +79,30 @@ describe("book", () => {
     expect(checkSeatStatus("E", 3)).toBe(true);
     expect(book("E", 3)).toBe("Seat in E3 is already booked");
   });
+});
+
+describe("report", () => {
   it('should return "total number of seats"', () => {
     expect(totalSeats()).toBe(20);
   });
+
   it('should return "total number of seats booked"', () => {
-    expect(totalBooked(true)).toBe(9);
+    expect(totalBooked(true)).toBe(11);
+  });
+
+  it('should return "total number of seats not booked"', () => {
+    expect(totalBooked(false)).toBe(9);
+  });
+
+  it("should return 1800 as the total amout for ECONOMIC seat", () => {
+    expect(income("ECONOMIC")).toBe(1800);
+  });
+
+  it("should return 3600 as the total amout for NORMAL seat", () => {
+    expect(income("NORMAL")).toBe(3600);
+  });
+
+  it("should return 3600 as the total amout for VIP seat", () => {
+    expect(income("VIP")).toBe(3600);
   });
 });

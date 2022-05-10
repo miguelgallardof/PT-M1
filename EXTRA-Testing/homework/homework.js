@@ -43,8 +43,8 @@ function checkSeatStatus(row, number) {
   if (typeof number !== "number")
     throw new TypeError("Second parameter is not a number");
   if (row.length > 2) throw new TypeError("This parameter is not a letter");
-  if (row === "") throw new TypeError("This parameter is an empty string");
-  if (number > 3) throw new TypeError("This parameter is greater than 4");
+  if (row == "") throw new TypeError("This parameter is an empty string");
+  if (number > 3) throw new TypeError("This parameter is greater than 3");
   /* const numberRow = getRowNumber(row);
   const layoutRows = layout[numberRow];
   const seat = layoutRows[number]; */
@@ -54,12 +54,13 @@ function checkSeatStatus(row, number) {
 }
 
 function getRowNumber(letter) {
-  return letter.charCodeAt(0) - 65;
+  return letter.charCodeAt(0) - 65; // 65 - 65 = 0
 }
 
 function book(row, number) {
   if (checkSeatStatus(row, number)) {
-    return "Seat in " + row + number + " is already booked";
+    //return "Seat in " + row + number + " is already booked";
+    return `Seat in ${row}${number} is already booked`;
   }
   /* const numberRow = getRowNumber(row);
   const layoutRows = layout[numberRow];
@@ -70,35 +71,48 @@ function book(row, number) {
 }
 
 function totalSeats() {
-  let total = 0;
+  let cont = 0;
   for (let i = 0; i < layout.length; i++) {
-    total += layout[i].length;
+    cont += layout[i].length;
   }
-  //console.log(total);
+  return cont;
+}
+
+function totalBooked(arg) {
+  let cont = 0;
+  for (let i = 0; i <= layout.length - 1; i++) {
+    for (let j = 0; j <= layout[j].length - 1; j++) {
+      if (layout[i][j].booked === arg) {
+        cont += 1;
+      }
+    }
+  }
+  return cont;
+}
+
+function income(arg) {
+  var cont = 0;
+  for (let i = 0; i <= layout.length - 1; i++) {
+    for (let j = 0; j <= layout[j].length - 1; j++) {
+      if (layout[i][j].type === arg) {
+        cont += 1;
+        if (arg === "ECONOMIC") {
+          var total;
+          total = cont * 300;
+        }
+        if (arg === "NORMAL") {
+          var total;
+          total = cont * 450;
+        }
+        if (arg === "VIP") {
+          var total;
+          total = cont * 600;
+        }
+      }
+    }
+  }
   return total;
 }
-
-function totalBooked(row, number) {
-  let seat = getSeat(row, number);
-  if (seat.book == true) {
-    let cont1 = 0;
-    for (let i = 0; i < layout.length; i++) {
-      cont1 += layout[i].length;
-    }
-    console.log(cont1);
-    return cont1;
-  }
-}
-
-/* function totalNoBooked() {
-  if ((seat.booked = false)) {
-    let total = 0;
-    for (let i = 0; i < layout.length; i++) {
-      total += layout[i].length;
-    }
-    return total;
-  } 
-}*/
 
 module.exports = {
   checkSeatStatus,
@@ -106,4 +120,5 @@ module.exports = {
   book,
   totalSeats,
   totalBooked,
+  income,
 };
