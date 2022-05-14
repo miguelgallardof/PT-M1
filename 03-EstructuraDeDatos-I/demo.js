@@ -1,5 +1,5 @@
 // Factorial de un Numero Natural:
-/* function factorial(n) {
+function factorial(n) {
   // caso de corte:
   if (n === 1) return 1;
   //if (n === 0 || n === 1) return 1; // 0! = 1
@@ -7,7 +7,7 @@
   return n * factorial(n - 1);
 }
 
-console.log(factorial(10)); */
+console.log(factorial(10));
 
 /* // El objeto Set permite almacenar valores únicos de 
 // cualquier tipo, incluso valores primitivos u 
@@ -58,25 +58,25 @@ console.log(typeof(setO))
 console.log(typeof(array)) */
 
 /* // Stack:
-let array = [ ];
+let array = [];
 array.push(1);
 array.push(2);
-console.log(array)
-array.pop( );
+console.log(array);
+array.pop();
 
-console.log(array)  */
+console.log(array); */
 
 /* // otra manera de definir un stack:
-let array1 = [ ];
+let array1 = [];
 array1.unshift(1);
 array1.unshift(2);
 array1.unshift(3);
-console.log(array1)
-array1.shift( );
+console.log(array1);
+array1.shift();
 
-console.log(array1) */
+console.log(array1); */
 
-class Stack {
+/* class Stack {
   constructor() {
     this.stack = [];
   }
@@ -97,4 +97,4 @@ stack1.show();
 stack1.delete();
 // // justamente en la clase no funcionaba console.log ya que dentro
 // // de la clase Stack esta definido el metodo show!!
-stack1.show();
+stack1.show(); */
