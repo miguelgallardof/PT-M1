@@ -90,7 +90,7 @@ function totalBooked(arg) {
   return cont;
 }
 
-function income(arg) {
+function income(arg, tr) {
   var cont = 0;
   for (let i = 0; i <= layout.length - 1; i++) {
     for (let j = 0; j <= layout[j].length - 1; j++) {
