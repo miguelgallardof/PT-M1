@@ -127,12 +127,23 @@ BinarySearchTree.prototype.breadthFirstForEach = function (cb, array = []) {
   if (this.left) array.push(this.left);
   if (this.right) array.push(this.right);
   cb(this.value);
-  /* let next = array.shift();
+  if (array.length > 0) {
+    array.shift().breadthFirstForEach(cb, array);
+  }
+};
+
+// Otra manera de hacerlo
+
+/* BinarySearchTree.prototype.breadthFirstForEach = function (cb, array = []) {
+  if (this.left) array.push(this.left);
+  if (this.right) array.push(this.right);
+  cb(this.value);
+  let next = array.shift();
   if (next) {
     next.breadthFirstForEach(cb, array);
-  } */
-  array.length && array.shift().breadthFirstForEach(cb, array);
-};
+  }
+  // array.length && array.shift().breadthFirstForEach(cb, array);
+}; */
 
 BinarySearchTree.prototype.size = function () {
   if (!this.left && !this.right) {
