@@ -132,6 +132,8 @@ lista.add("Miguel");
 lista.add("Walter");
 lista.add("Jimmy");
 
+console.log(lista);
+
 // Hash Table( ver información en: https://es.wikipedia.org/wiki/Tabla_hash)
 // Una Hash table contiene un arreglo de "contenedores" o buckets donde puede guardar información.
 // Para este ejercicio, generar 35 buckets para la Hash Table, y realizar los métodos, get, hasKey
