@@ -160,6 +160,22 @@ BinarySearchTree.prototype.size = function () {
   return 1 + this.left.size() + this.right.size();
 };
 
+// Balancear
+
+// Prueba
+
+let tree = new BinarySearchTree();
+
+tree.insert(10);
+tree.insert(5);
+tree.insert(15);
+tree.insert(3);
+tree.insert(7);
+tree.insert(13);
+tree.insert(17);
+
+console.log(tree);
+
 // No modifiquen nada debajo de esta linea
 // --------------------------------
 
